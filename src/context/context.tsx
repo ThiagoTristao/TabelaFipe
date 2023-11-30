@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, createContext, useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction, createContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 
 export interface contextInferface {
@@ -7,6 +7,10 @@ export interface contextInferface {
   fipeForm: any
   loading: boolean
   setLoading: Dispatch<SetStateAction<boolean>>
+}
+
+export interface childrenInterface {
+  children: ReactNode
 }
 
 const defaultState = {
@@ -19,7 +23,7 @@ const defaultState = {
 
 const MyContext = createContext(defaultState);
 
-const MyContextProvider = ({ children }) => {
+const MyContextProvider = ({ children }: childrenInterface) => {
     const [loading, setLoading] = useState<boolean>(false)
     const [step, setStep] = useState<string>('fipePage')
     const fipeForm = useForm();
