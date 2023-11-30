@@ -164,15 +164,16 @@ export default function FipeTable() {
                 <Controller
                   name="selectedBrand"
                   control={control}
-                  defaultValue=""
+                  defaultValue=''
                   render={() => (
                     <Select
                       label="Marca"
                       onChange={handleSetBrand}
                       value={getValues("selectedBrand")}
+                      id="brandSelect"
                     >
                       {brands?.map((element) => (
-                        <MenuItem key={element.code} value={element.name}>
+                        <MenuItem key={element.code} value={element.name} id={element.code}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -193,15 +194,16 @@ export default function FipeTable() {
                 <Controller
                   name="selectedModel"
                   control={control}
-                  defaultValue=""
+                  defaultValue=''
                   render={() => (
                     <Select
                       label="Modelo"
                       onChange={handleSetModel}
                       value={getValues("selectedModel")}
+                      id="modelSelect"
                     >
                       {models?.map((element) => (
-                        <MenuItem key={element.code} value={element.name}>
+                        <MenuItem key={element.code} value={element.name} id={element.code}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -222,15 +224,16 @@ export default function FipeTable() {
                 <Controller
                   name="selectedYear"
                   control={control}
-                  defaultValue=""
+                  defaultValue=''
                   render={() => (
                     <Select
                       label="Ano"
                       onChange={handleSetYear}
                       value={getValues("selectedYear")}
+                      id="yearSelect"
                     >
                       {years?.map((element) => (
-                        <MenuItem key={element.code} value={element.name}>
+                        <MenuItem key={element.code} value={element.name} id={element.code}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -254,6 +257,7 @@ export default function FipeTable() {
                   variant="contained"
                   color="secondary"
                   type="submit"
+                  id="submitButton"
                 >
                   Consultar Preço
                 </Button>
