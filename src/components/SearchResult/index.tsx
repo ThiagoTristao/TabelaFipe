@@ -75,7 +75,7 @@ export default function SearchResult() {
             </Typography>
             </Box>
           </CardContent>
-          <Button size="large" variant="contained" onClick={handleNewConsult} sx={{color: "white", marginBottom: "1%"}}>
+          <Button id="newConsult" size="large" variant="contained" onClick={handleNewConsult} sx={{color: "white", marginBottom: "1%"}}>
             Nova Consulta
           </Button>
       </Card>

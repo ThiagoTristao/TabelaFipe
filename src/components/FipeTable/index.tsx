@@ -173,7 +173,7 @@ export default function FipeTable() {
                       id="brandSelect"
                     >
                       {brands?.map((element) => (
-                        <MenuItem key={element.code} value={element.name} id={element.code}>
+                        <MenuItem key={element.code} value={element.name} id={element.name}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -182,7 +182,7 @@ export default function FipeTable() {
                   rules={{ required: true }}
                 />
                 {errors.selectedBrand && (
-                  <FormHelperText>Selecione a marca!</FormHelperText>
+                  <FormHelperText id="brandError">Selecione a marca!</FormHelperText>
                 )}
               </FormControl>
               <FormControl
@@ -203,7 +203,7 @@ export default function FipeTable() {
                       id="modelSelect"
                     >
                       {models?.map((element) => (
-                        <MenuItem key={element.code} value={element.name} id={element.code}>
+                        <MenuItem key={element.code} value={element.name} id={element.name}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -212,7 +212,7 @@ export default function FipeTable() {
                   rules={{ required: true }}
                 />
                 {errors.selectedModel && (
-                  <FormHelperText>Selecione o modelo!</FormHelperText>
+                  <FormHelperText id="modelError">Selecione o modelo!</FormHelperText>
                 )}
               </FormControl>
               <FormControl
@@ -232,8 +232,8 @@ export default function FipeTable() {
                       value={getValues("selectedYear")}
                       id="yearSelect"
                     >
-                      {years?.map((element) => (
-                        <MenuItem key={element.code} value={element.name} id={element.code}>
+                      {years?.map((element, index) => (
+                        <MenuItem key={element.code} value={element.name} id={element.name}>
                           {element.name}
                         </MenuItem>
                       ))}
@@ -242,7 +242,7 @@ export default function FipeTable() {
                   rules={{ required: true }}
                 />
                 {errors.selectedYear && (
-                  <FormHelperText>Selecione o ano!</FormHelperText>
+                  <FormHelperText id="yearError">Selecione o ano!</FormHelperText>
                 )}
               </FormControl>
             </CardContent>
