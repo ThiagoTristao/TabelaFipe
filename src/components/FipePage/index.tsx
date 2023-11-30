@@ -19,7 +19,7 @@ export default function FipePage() {
         alignItems={"center"}
         flexDirection={"column"}
       >
-        <Box width={step === "searchResult" ? "100%" : null}>
+        <Box width={step === "searchResult" ? "100%" : "30%"}>
           {step === "fipePage" && (
             <>
               <Header />
