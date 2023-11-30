@@ -14,7 +14,7 @@ import { getFipeInfo } from "@/services/api";
 export default function SearchResult() {
   const { fipeForm, loading, setLoading, setStep } = useContext(MyContext);
   const { setValue, getValues } = fipeForm;
-  const [fipeInfo, setFipeInfo] = useState("");
+  const [fipeInfo, setFipeInfo] = useState<any>("");
 
   const handleNewConsult = () => {
     setValue("selectedBrand", "");
