@@ -17,6 +17,19 @@ import { MyContext } from "@/context/context";
 import { getBrands, getModels, getYears } from "@/services/api";
 import { Controller } from "react-hook-form";
 
+interface Brand {
+  name: string;
+  code: string;
+}
+interface Models {
+  name: string;
+  code: string;
+}
+interface Years {
+  name: string;
+  code: string;
+}
+
 export default function FipeTable() {
   const { fipeForm, loading, setLoading, setStep } = useContext(MyContext);
   const {
@@ -27,9 +40,9 @@ export default function FipeTable() {
     clearErrors,
     formState: { errors },
   } = fipeForm;
-  const [brands, setBrands] = useState();
-  const [models, setModels] = useState();
-  const [years, setYears] = useState();
+  const [brands, setBrands] = useState<Brand[]>([]);
+  const [models, setModels] = useState<Models[]>([]);
+  const [years, setYears] = useState<Years[]>([]);
   const [showToast, setShowToast] = useState(false);
 
   const handleSetBrand = async (event:any) => {
