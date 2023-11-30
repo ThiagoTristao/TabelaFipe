@@ -32,7 +32,7 @@ export default function FipeTable() {
   const [years, setYears] = useState();
   const [showToast, setShowToast] = useState(false);
 
-  const handleSetBrand = async (event) => {
+  const handleSetBrand = async (event:any) => {
     const value = event.target.value;
     setValue("selectedBrand", value);
     clearErrors("selectedBrand");
@@ -45,7 +45,7 @@ export default function FipeTable() {
     fetchGetModels(getValues("brandCode"));
   };
 
-  const handleSetModel = async (event) => {
+  const handleSetModel = async (event:any) => {
     const value = event.target.value;
     setValue("selectedModel", value);
     clearErrors("selectedModel");
@@ -56,7 +56,7 @@ export default function FipeTable() {
     fetchGetYears(getValues("brandCode"), getValues("modelCode"));
   };
 
-  const handleSetYear = async (event) => {
+  const handleSetYear = async (event:any) => {
     const value = event.target.value;
     setValue("selectedYear", value);
     const yearCode = await findYear(value);
@@ -64,18 +64,18 @@ export default function FipeTable() {
     clearErrors("selectedYear");
   };
 
-  const findBrand = async (value) => {
-    const index = brands.findIndex((element) => element.name === value);
+  const findBrand = async (value:string) => {
+    const index = brands.findIndex((element:any) => element.name === value);
     return brands[index].code;
   };
 
-  const findModel = async (value) => {
-    const index = models.findIndex((element) => element.name === value);
+  const findModel = async (value:string) => {
+    const index = models.findIndex((element:any) => element.name === value);
     return models[index].code;
   };
 
-  const findYear = async (value) => {
-    const index = years.findIndex((element) => element.name === value);
+  const findYear = async (value:string) => {
+    const index = years.findIndex((element:any) => element.name === value);
     return years[index].code;
   };
 
@@ -136,7 +136,7 @@ export default function FipeTable() {
           <Snackbar
             open={showToast}
             autoHideDuration={6000}
-            message="Ocorreu um erro, por favor, tente novamente mais tarde"
+            message="Ocorreu um erro ao consultar os dados, por favor, tente novamente mais tarde"
           />
         )}
         <form onSubmit={handleSubmit(onSubmit)}>
